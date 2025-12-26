@@ -44,8 +44,6 @@ A parity plot comparing observed vs predicted LogS is provided in `reports/figur
 
 ## Project Structure
 
----
-
 solubility-prediction/
 ├── data/ # ESOL dataset
 ├── notebooks/ # QSAR analysis notebook
