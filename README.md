@@ -42,6 +42,35 @@ A parity plot comparing observed vs predicted LogS is provided in `reports/figur
 
 ---
 
+## Results & Validation
+
+### Random Split Performance
+Using a standard random train/test split, the QSAR model achieved:
+
+- **R² ≈ 0.86**
+- **RMSE ≈ 0.81**
+
+This performance reflects interpolation within known chemical space, where
+structurally similar molecules appear in both training and test sets.
+
+### Scaffold Split Performance (Chem-Aware Validation)
+To assess true generalization, a Murcko scaffold split was applied, ensuring
+that core molecular scaffolds in the test set were absent from training.
+
+- **Scaffold split R² is lower than random split**
+- This decrease is expected and scientifically meaningful
+
+The scaffold split provides a more realistic estimate of model performance on
+novel chemotypes, reducing analogue bias and data leakage.
+
+### Interpretation
+The observed drop in performance under scaffold splitting indicates that
+aqueous solubility is driven by both global physicochemical properties and
+scaffold-specific effects. The model generalizes reasonably to unseen
+chemistry, consistent with published QSAR benchmarks.
+
+---
+
 ## Project Structure
 
 solubility-prediction/
@@ -62,6 +91,8 @@ solubility-prediction/
 - Git & GitHub
 
 ---
+
+
 
 ## Author
 **Theresia Cate**  
